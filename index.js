@@ -39,8 +39,8 @@ class FlipView extends Component {
     this.state = { isFlipped: props.isFlipped };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.isFlipped !== this.props.isFlipped) {
+componentDidUpdate(prevProps) {
+    if (prevProps.isFlipped !== this.props.isFlipped) {
       this.flip();
     }
   }
